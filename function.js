@@ -123,7 +123,6 @@ function deleteProduct(event) {
 }
 
 /**Data Model */
-
 /**
  * Alisveris sepetine ürün ekler
  */

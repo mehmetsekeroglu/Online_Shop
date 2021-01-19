@@ -171,20 +171,24 @@ function addProduct() {
   })
 }
 
-function deleteProduct() {
+function deleteProduct(event) {
+  shoppingList.map((product, index) => {
+    if (event.target.id === `delete-${index}`) {
+      const productIndex = shoppingList.indexOf(product);
+      shoppingList.splice(productIndex, 1);
+      shoppingElement.innerHTML = showShoppingBox(shoppingList);
+    }
+  })
+}
+
+function deleteProductEvent() {
   document.querySelector(".shopping-box").addEventListener("click", (event) => {
     if (event.target.className === 'delete btn btn-secondary') {
-      shoppingList.map((product, index) => {
-        if (event.target.id === `delete-${index}`) {
-          const productIndex = shoppingList.indexOf(product);
-          shoppingList.splice(productIndex, 1);
-          shoppingElement.innerHTML = showShoppingBox(shoppingList);
-        }
-      })
+      deleteProduct(event)
     }
   })
 }
 
 createUI(productList);
 addProduct();
-deleteProduct();
+deleteProductEvent();

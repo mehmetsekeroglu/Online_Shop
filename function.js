@@ -104,7 +104,9 @@ function createShoppingList(event) {
     productList.filter(product => {
         if (event.target.id === product.productName) {
             shoppingList.push(product);
+            
         }
+       
     })
     return shoppingList
 }
@@ -118,15 +120,25 @@ function deleteProduct(event) {
             const productIndex = shoppingList.indexOf(product);
             shoppingList.splice(productIndex, 1);
             shoppingElement.innerHTML = showShoppingBox(shoppingList);
+            viewEmptyShoppingBox()
         }
     })
 }
-
+/**
+ * Bos sepeti görüntüler
+ */
+function viewEmptyShoppingBox() {
+    if(shoppingList.length===0){
+        shoppingElement.innerHTML = "Sepetiniz Bos" 
+    }
+}
+ 
 /**Data Model */
 /**
  * Alisveris sepetine ürün ekler
  */
 function addProduct() {
+    viewEmptyShoppingBox()
     productList.map(product => {
         document.querySelector(`#${product.productName}`).addEventListener("click", (event) => {
             createShoppingList(event)
@@ -139,9 +151,11 @@ function addProduct() {
  */
 function deleteProductEvent() {
     document.querySelector(".shopping-box").addEventListener("click", (event) => {
-        if (event.target.className === 'delete btn btn-secondary') {
+        if (event.target.className === "delete btn btn-secondary") {
             deleteProduct(event);
+            
         }
+
     })
 }
 

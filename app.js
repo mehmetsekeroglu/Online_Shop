@@ -1,3 +1,19 @@
+/**
+ * Raziye Hanimin Online Satis Sitesi
+ * 1.Ürün listesi sayfanın sol tarafında gösterilecek,
+ * 2.Her ürüne bir satin alma butonu eklenecek,
+ * 3.Satın alınan ürünler sayfanin sag tarafında sepette gösterilecek,
+ * 4.Satin alinan her ürüne ürünü kaldirma butonu eklenecek,
+ * 5.Gerektiginde satin alinan ürünler sepetten cikarilacak,
+ * 6.Sepetin en altında toplam satış fiyatı gösterilecektir.
+ * Analiz:
+ * 1.Bir ürün ekleme fonksiyonu olusturulur,
+ * 2.Satin alma butonuna her tiklandiginda tiklanan eleman bir listede tutulur,
+ * 3.Satin alinan ürünler listesi UI da gösterilir,
+ * 4.Delete butonuna tiklandiginda ise tiklanan ürünü listeden cikaran bir fonksiyon olusturulur,
+ * 5.Satin alinan ürünlerin toplam fiyatlari price degeri kullanilarak hesaplanir.
+ */
+
 const productList = [{
     productName: "Aprikosen",
     price: 7.90,
@@ -66,7 +82,6 @@ const productList = [{
 const headerElement = document.querySelector("#nav-header");
 const productElement = document.querySelector(".product-list");
 let shoppingElement = document.querySelector(".shopping-box");
-
 
 let shoppingList = []
 

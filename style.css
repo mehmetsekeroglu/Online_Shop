@@ -1,18 +1,20 @@
 .product-list{
     border-radius: 5px;
     box-shadow: 2px 5px 5px;
-    background-color:whitesmoke;
+    background-color:rgb(245, 245, 235);
     margin-right: 20px;
 }
 .shopping-box{
     border-radius: 5px;
     box-shadow: 2px 5px 5px;
-    background-color:whitesmoke
+    background-color:rgb(245, 245, 235);
 }
 
+ 
 body {
-    background: linear-gradient(to right, #4b4d50, #e6f0ef);
+    background: linear-gradient(to right, #4b4d50, #c4b45b);
 }
+
 .navbar-brand{
     padding: 2vw
 }
@@ -27,11 +29,8 @@ h2{
     font-weight: bold;
     margin-left: 12vw;
     position: fixed;
-    /* display: block;
-    text-align: center; */
+}
 
-    
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
+#logo{
+    font-size: 40px;
 }

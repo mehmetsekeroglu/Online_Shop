@@ -5,9 +5,9 @@
 function createHeader() {
     return `
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand text-light" href="#">
-      <img src="https://www.vhv.rs/dpng/d/212-2122862_transparent-r-symbol-png-copyright-r-logo-png.png" width="50" height="50" class="d-inline-block align-top" alt="">
-      Raziye's Online Shop
+    <a class="navbar-brand text-light brand" href="#">
+      <img src="https://i.pinimg.com/originals/1e/dc/c8/1edcc8c210d7e03021a15b529df6c505.jpg"  width="80" height="80" class="d-flex-inline" alt="Brand">
+      <span id="logo">Raziye's Online Shop</span>
     </a>
   </nav>`
 }
@@ -38,7 +38,7 @@ function createProductList(pList) {
         <td>${product.totalCalories}</td>
         <td>${product.expireDate.toLocaleDateString("ch-CH")}</td>
         <td>${product.price}</td>
-        <td><img src="${product.productImage}" width=40px></img></td>
+        <td><img src="${product.productImage}" width=70px></img></td>
         <td><button id="${product.productName}" type="button" class="add btn btn-secondary">Buy</button></td>
       </tr>`
     })

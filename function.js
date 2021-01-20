@@ -6,7 +6,7 @@ function createHeader() {
     return `
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand text-light" href="#">
-      <img src="https://image.shutterstock.com/image-vector/r-logo-vector-letter-forming-260nw-345010364.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="https://www.vhv.rs/dpng/d/212-2122862_transparent-r-symbol-png-copyright-r-logo-png.png" width="50" height="50" class="d-inline-block align-top" alt="">
       Raziye's Online Shop
     </a>
   </nav>`
@@ -36,10 +36,10 @@ function createProductList(pList) {
             `<tr>
         <td><strong>${product.productName}<strong></td>
         <td>${product.totalCalories}</td>
-        <td>${product.expireDate}</td>
+        <td>${product.expireDate.toLocaleDateString("ch-CH")}</td>
         <td>${product.price}</td>
         <td><img src="${product.productImage}" width=40px></img></td>
-        <td><button id="${product.productName}" type="button" class="btn btn-secondary">Buy</button></td>
+        <td><button id="${product.productName}" type="button" class="add btn btn-secondary">Buy</button></td>
       </tr>`
     })
     productTable +=
@@ -87,6 +87,13 @@ function showShoppingBox(pShopList) {
     </table>`
     return shoppingTable
 }
+function createEmptyShoppingSide() {
+    return `
+    <section id="empty-box">
+    <p>Sepetiniz Bos</p>
+    <div><img src="https://www.libresensor.com/Content/Icons/icon-basket.png"></img></div>
+    </section>  `
+}
 /**
  * Ana yapiyi UI'da görüntüler
  * @param {Array} pList 
@@ -104,9 +111,7 @@ function createShoppingList(event) {
     productList.filter(product => {
         if (event.target.id === product.productName) {
             shoppingList.push(product);
-            
         }
-       
     })
     return shoppingList
 }
@@ -128,34 +133,32 @@ function deleteProduct(event) {
  * Bos sepeti görüntüler
  */
 function viewEmptyShoppingBox() {
-    if(shoppingList.length===0){
-        shoppingElement.innerHTML = "Sepetiniz Bos" 
+    if (shoppingList.length === 0) {
+        shoppingElement.innerHTML = createEmptyShoppingSide()
     }
 }
- 
+
 /**Data Model */
 /**
  * Alisveris sepetine ürün ekler
  */
 function addProduct() {
     viewEmptyShoppingBox()
-    productList.map(product => {
-        document.querySelector(`#${product.productName}`).addEventListener("click", (event) => {
+    productElement.addEventListener("click", (event) => {
+        if (event.target.className === "add btn btn-secondary"){
             createShoppingList(event)
-            shoppingElement.innerHTML = showShoppingBox(shoppingList);
-        })
+        shoppingElement.innerHTML = showShoppingBox(shoppingList);
+        }
     })
 }
 /**
  * Silinen ürünü DOM'dan kaldirir
  */
 function deleteProductEvent() {
-    document.querySelector(".shopping-box").addEventListener("click", (event) => {
+    shoppingElement.addEventListener("click", (event) => {
         if (event.target.className === "delete btn btn-secondary") {
             deleteProduct(event);
-            
         }
-
     })
 }
 

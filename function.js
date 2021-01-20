@@ -161,7 +161,6 @@ function deleteProductEvent() {
         }
     })
 }
-
 /**Initialization */
 function start() {
     createUI(productList);

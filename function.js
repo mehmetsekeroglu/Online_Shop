@@ -87,6 +87,7 @@ function showShoppingBox(pShopList) {
     </table>`
     return shoppingTable
 }
+
 function createEmptyShoppingSide() {
     return `
     <section id="empty-box">
@@ -137,7 +138,6 @@ function viewEmptyShoppingBox() {
         shoppingElement.innerHTML = createEmptyShoppingSide()
     }
 }
-
 /**Data Model */
 /**
  * Alisveris sepetine ürün ekler
@@ -145,9 +145,9 @@ function viewEmptyShoppingBox() {
 function addProduct() {
     viewEmptyShoppingBox()
     productElement.addEventListener("click", (event) => {
-        if (event.target.className === "add btn btn-secondary"){
+        if (event.target.className === "add btn btn-secondary") {
             createShoppingList(event)
-        shoppingElement.innerHTML = showShoppingBox(shoppingList);
+            shoppingElement.innerHTML = showShoppingBox(shoppingList);
         }
     })
 }

@@ -1,30 +1,36 @@
-.product-list{
+.product-list {
     border-radius: 5px;
     box-shadow: 2px 5px 5px;
-    background-color:rgb(245, 245, 235);
+    background-color: rgb(245, 245, 235);
     margin-right: 20px;
 }
-.shopping-box{
+
+.shopping-box {
     border-radius: 5px;
     box-shadow: 2px 5px 5px;
-    background-color:rgb(245, 245, 235);
+    background-color: rgb(245, 245, 235);
 }
+
 body {
     background: linear-gradient(to right, #4b4d50, #c4b45b);
 }
-.navbar-brand{
+
+.navbar-brand {
     padding: 2vw
 }
-h2{
+
+h2 {
     text-align: center;
 }
-#empty-box{
+
+#empty-box {
     text-decoration: grey;
     font-size: 2rem;
     font-weight: bold;
     margin-left: 12vw;
     position: fixed;
 }
-#logo{
+
+#logo {
     font-size: 40px;
 }

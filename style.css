@@ -27,10 +27,14 @@ h2 {
     text-decoration: grey;
     font-size: 2rem;
     font-weight: bold;
-    margin-left: 12vw;
+    margin-left: 7vw;
     position: fixed;
 }
 
 #logo {
     font-size: 40px;
+}
+
+#empty-img{
+    margin-left: 5vw;
 }

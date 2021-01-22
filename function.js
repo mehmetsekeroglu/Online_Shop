@@ -91,7 +91,7 @@ function showShoppingBox(pShopList) {
 function createEmptyShoppingSide() {
     return `
     <section id="empty-box">
-    <p>Sepetiniz Bos</p>
+    <p>Your Shopping Box is Empty</p>
     <div><img src="https://www.libresensor.com/Content/Icons/icon-basket.png"></img></div>
     </section>  `
 }
